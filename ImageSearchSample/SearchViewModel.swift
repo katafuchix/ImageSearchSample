@@ -20,6 +20,9 @@ struct SearchViewModel {
     // MARK: - rx
     
     var searchWord = Variable<String>("")
+    var imageUrls  = Variable<[URL]>([])
+    /// ローディング中ならtrue
+    var isLoading: Variable<Bool> = Variable(false)
     private let disposeBag: DisposeBag = DisposeBag()
     
     // MARK: - init
@@ -34,9 +37,9 @@ struct SearchViewModel {
         searchWord.asObservable().bind(to: model.searchWord).disposed(by: disposeBag)
     }
     
-    func getImageUrls(_ parameters:[String:String]) -> Observable<[String]>
+    func getImageUrls(_ parameters:[String:String]) -> Observable<[URL]>
     {
-        return Observable<[String]>.create { (observer) -> Disposable in
+        return Observable<[URL]>.create { (observer) -> Disposable in
             let request = self.model.getRequest(parameters).responseString{ response in
                 guard let html = response.result.value else{ return }
                 guard let data = html.data(using: .utf8) else { return }
@@ -45,7 +48,7 @@ struct SearchViewModel {
                     print("Failed to match .repository-meta-content, maybe the HTML changed?")
                     return
                 }
-                var ret = [String]()
+                var ret = [URL]()
                 let columns = div.nodes(matchingSelector: "div")
                 for column in columns {
                     let ass = column.nodes(matchingSelector: "a").map({ $0.attributes["href"]})
@@ -56,8 +59,10 @@ struct SearchViewModel {
                     
                     let link = ims[0]
                     if let imageLink = link {
-                        if ret.contains(imageLink){ continue }
-                        ret.append(imageLink)
+                        if let url = URL(string: imageLink) {
+                            if ret.contains(url){ continue }
+                            ret.append(url)
+                        }
                     }
                 }
                 observer.onNext(ret)

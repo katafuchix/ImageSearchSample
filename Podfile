@@ -12,4 +12,5 @@ target 'ImageSearchSample' do
 	pod 'RxAlamofire'
 	pod 'HTMLReader'
 	pod 'Alamofire', '~> 4.4'
+    pod 'AlamofireImage'
 end

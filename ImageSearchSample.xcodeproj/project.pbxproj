@@ -15,6 +15,7 @@
 		31251FCA205C3789000EC06A /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31251FC9205C3789000EC06A /* SearchModel.swift */; };
 		31251FCC205C37E6000EC06A /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31251FCB205C37E6000EC06A /* SearchViewModel.swift */; };
 		31251FCE205C3836000EC06A /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31251FCD205C3836000EC06A /* HttpClient.swift */; };
+		3161318520D9FA4800A4008C /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3161318420D9FA4800A4008C /* ImageCollectionViewCell.swift */; };
 		FDC7FDB73AA27349C56D1428 /* Pods_ImageSearchSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 624CCB7BDC358F3AE1155981 /* Pods_ImageSearchSample.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		31251FC9205C3789000EC06A /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		31251FCB205C37E6000EC06A /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		31251FCD205C3836000EC06A /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		3161318420D9FA4800A4008C /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		624CCB7BDC358F3AE1155981 /* Pods_ImageSearchSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageSearchSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		762707D144CFDA3778D8A330 /* Pods-ImageSearchSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageSearchSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageSearchSample/Pods-ImageSearchSample.release.xcconfig"; sourceTree = "<group>"; };
 		ECF1EB41379021A4A017DE59 /* Pods-ImageSearchSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageSearchSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImageSearchSample/Pods-ImageSearchSample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				31251FCB205C37E6000EC06A /* SearchViewModel.swift */,
 				31251FCD205C3836000EC06A /* HttpClient.swift */,
 				31251FBB205C338B000EC06A /* Main.storyboard */,
+				3161318420D9FA4800A4008C /* ImageCollectionViewCell.swift */,
 				31251FBE205C338B000EC06A /* Assets.xcassets */,
 				31251FC0205C338B000EC06A /* LaunchScreen.storyboard */,
 				31251FC3205C338B000EC06A /* Info.plist */,
@@ -109,7 +112,6 @@
 				31251FB1205C338B000EC06A /* Frameworks */,
 				31251FB2205C338B000EC06A /* Resources */,
 				E5F0AEA1C2949103AA52B1C7 /* [CP] Embed Pods Frameworks */,
-				46AA3C970234194810EEE0C3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -168,21 +170,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		46AA3C970234194810EEE0C3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImageSearchSample/Pods-ImageSearchSample-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		78D00159582BD88F299F111B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -209,6 +196,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ImageSearchSample/Pods-ImageSearchSample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/HTMLReader/HTMLReader.framework",
 				"${BUILT_PRODUCTS_DIR}/NSObject+Rx/NSObject_Rx.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
@@ -218,6 +206,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HTMLReader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSObject_Rx.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
@@ -236,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3161318520D9FA4800A4008C /* ImageCollectionViewCell.swift in Sources */,
 				31251FCE205C3836000EC06A /* HttpClient.swift in Sources */,
 				31251FCA205C3789000EC06A /* SearchModel.swift in Sources */,
 				31251FBA205C338B000EC06A /* ViewController.swift in Sources */,
